@@ -1,5 +1,6 @@
 import React from 'react'; 
 import BlogCard from './components/BlogCard/BlogCard';
+import Blog from './components/Blog/Blog';
 import './index.css';
 
 //create a todo list
@@ -21,6 +22,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <Blog />
         {blogPosts.map((blogPost, index) => (
           <BlogCard
             imageSource={blogPost.imageSource}

@@ -1,4 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './BlogCard.css';
 
+class Blog extends React.Component {
+  render() {
+    return (
+      <div className="Blog">
+        {"Hello, World!"}
+      </div>
+    )
+  }
+}
+
+export default Blog;
