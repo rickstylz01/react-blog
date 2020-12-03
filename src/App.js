@@ -1,38 +1,32 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import './index.css'
+import React from 'react'; 
+import BlogCard from './components/BlogCard/BlogCard';
+import './index.css';
 
 //create a todo list
-
-
 class App extends React.Component {
-  handleClick() {
-    
-  }
-
   render() {
-    return (
+    const blogPosts = [
+      { 
+        imageSource: "https://rickstylz01.github.io/images/rick_diamond.png?raw=true",
+        title: "Initial Post",
+        description: "Lorum Ipsum",
+      },
+      {
+        imageSource: "https://rickstylz01.github.io/images/rick_diamond.png?raw=true",
+        title: "New different Post",
+        description: "different thing",
+      }
+    ];
 
-      <div className="main">
-        <Card style={{ width: '18rem'}}>
-          <Card.Img 
-            height={110}
-            width={110}
-            variant="top" 
-            src="./image/scaling.jpg" 
-          />
-          <Card.Body>
-            <Card.Title>Initial Post</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </Card.Text>
-            <Button 
-              variant="primary"
-              onClick={this.handleClick}>Go somewhere</Button>
-          </Card.Body>
-        </Card>
+
+    return (
+      <div className="App">
+        {blogPosts.map((blogPost, index) => (
+          <BlogCard
+            imageSource={blogPost.imageSource}
+            title={blogPost.title}
+            description={blogPost.description} />
+        ))}
       </div>
 
     ) 
